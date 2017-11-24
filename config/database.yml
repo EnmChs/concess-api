@@ -87,6 +87,7 @@ test:
 #
 production:
   <<: *default
+  host: concess-app.herokuapp.com
   database: fake-api_production
   username: fake-api
-  password: <%= ENV['FAKE-API_DATABASE_PASSWORD'] %>
+  password: qwerty

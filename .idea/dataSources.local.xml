@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails concess-api: test" uuid="808e4786-95ec-49cf-b8c1-e376a70a490e">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+    </data-source>
+    <data-source name="Rails concess-api: development" uuid="415f1a68-35e1-49ea-946f-ffdb81c16dbe">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+    </data-source>
+    <data-source name="Rails concess-api: production" uuid="9eb5a599-7707-4486-9a22-e2a9edd337e7">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>fake-api</user-name>
+    </data-source>
+  </component>
+</project>

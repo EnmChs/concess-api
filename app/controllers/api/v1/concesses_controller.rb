@@ -3,8 +3,7 @@ class Api::V1::ConcessesController < ApplicationController
 
   # GET /concesses
   def index
-    @concesses = Concess.all
-
+    @concesses = Concess.all.order(:created_at)
     render json: @concesses
   end
 
@@ -16,9 +15,8 @@ class Api::V1::ConcessesController < ApplicationController
   # POST /concesses
   def create
     @concess = Concess.new(concess_params)
-
     if @concess.save
-      render json: @concess, status: :created, location: @concess
+      render json: @concess, status: :created
     else
       render json: @concess.errors, status: :unprocessable_entity
     end
@@ -46,6 +44,6 @@ class Api::V1::ConcessesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def concess_params
-      params.require(:concess).permit(:name, :aprox_num, :address, :contact_number, :cars_type, :warranty, :open_time, :close_time)
+      params[:data][:attributes].permit(:type, :name, :aprox_num, :address, :contact_number, :cars_type, :warranty, :open_time, :close_time)
     end
 end

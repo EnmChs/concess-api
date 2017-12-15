@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-  
-  
-  #resources :concesses
   namespace :api do
     namespace :v1, defaults: {format: 'json'} do
       resources :concesses 
       resources :vehicles
-      resources :comments     
+      resources :comments
+      mount_devise_token_auth_for 'User', at: 'auth'     
     end
   end
   

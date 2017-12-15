@@ -1,6 +1,6 @@
 class Api::V1::ConcessesController < ApplicationController
   before_action :set_concess, only: [:show, :update, :destroy]
-
+  # before_action :authenticate_user!, only: :index
   # GET /concesses
   def index
     @concesses = Concess.all.order(:created_at)
@@ -44,6 +44,6 @@ class Api::V1::ConcessesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def concess_params
-      params[:data][:attributes].permit(:type, :name, :aprox_num, :address, :contact_number, :cars_type, :warranty, :open_time, :close_time)
+      params[:data][:attributes].permit(:type, :name, :description, :warranty, :open_time)
     end
 end

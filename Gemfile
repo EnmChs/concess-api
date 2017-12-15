@@ -23,7 +23,8 @@ gem 'puma', '~> 3.7'
 gem "active_model_serializers", "~> 0.10.2"
 #gem 'jsonapi-resources'
 
-
+gem 'devise_token_auth'
+gem 'rack-cors', '~> 1.0', '>= 1.0.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

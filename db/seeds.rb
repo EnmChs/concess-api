@@ -8,16 +8,16 @@
 
 
 #(:name, :aprox_num, :address, :contact_number, :cars_type, :warranty)
-concess1 = Concess.create(name: "Concesionario #1", aprox_num: 4, address: "Calle cabure", contact_number: "04146958603")
-concess2 = Concess.create(name: "Concesionario #2", aprox_num: 3, address: "Calle cabima", contact_number: "04129664338")
+concess1 = Concess.create(name: "Concesionario Toyota", description: "De los mejores concesionarios", warranty: true)
+concess2 = Concess.create(name: "Concesionario Motorola", description: "De los mejores concesionarios", warranty: true)
 puts "Concesarios creados"
 
 #(:seria_num, :model, :brand, :year, :color, :transmission, :doors_num, :fuel, :concess_id)
-car1 = Vehicle.create(serial_num: "123123", brand: "Toyota", model: "Corolla", year: "1990", color: "purple", transmission: "automatic", concess: concess2)
-car2 = Vehicle.create(serial_num: "234234", brand: "Audi", model: "R8", year: "1991", color: "blue", transmission: "manual", concess: concess1)
-car3 = Vehicle.create(serial_num: "345345", brand: "Mercedez", model: "Benz", year: "1992", color: "green", concess: concess2)
-car4 = Vehicle.create(serial_num: "456456", brand: "Jeep", model: "Grand Cherokee", year: "1993", color: "blue", transmission: "automatic", concess: concess1)
-car5 = Vehicle.create(serial_num: "567567", brand: "Chevrolet", model: "Malibu", year: "1994", transmission: "manual", concess: concess2)
+car1 = Vehicle.create(brand: "Toyota", model: "Corolla", color: "purple", concess: concess2)
+car2 = Vehicle.create(brand: "Audi", model: "R8", color: "blue", concess: concess1)
+car3 = Vehicle.create(brand: "Mercedez", model: "Benz", color: "green", concess: concess2)
+car4 = Vehicle.create(brand: "Jeep", model: "Grand Cherokee", color: "blue", concess: concess1)
+car5 = Vehicle.create(brand: "Chevrolet", model: "Malibu", color: "red", concess: concess2)
 puts "Vehiculos creados"
 
 #(:body, :commented, :commented_type)

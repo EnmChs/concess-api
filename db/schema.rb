@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171119184552) do
+ActiveRecord::Schema.define(version: 20171201041314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,26 +26,41 @@ ActiveRecord::Schema.define(version: 20171119184552) do
 
   create_table "concesses", force: :cascade do |t|
     t.string "name"
-    t.integer "aprox_num"
-    t.string "address"
-    t.string "contact_number"
-    t.string "cars_type"
+    t.string "description"
     t.boolean "warranty"
     t.date "open_time"
-    t.date "close_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "provider", default: "email", null: false
+    t.string "uid", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.string "name"
+    t.string "nickname"
+    t.string "image"
+    t.string "email"
+    t.json "tokens"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
+  end
+
   create_table "vehicles", force: :cascade do |t|
-    t.string "serial_num"
     t.string "brand"
     t.string "model"
-    t.string "year"
     t.string "color"
-    t.string "transmission"
-    t.integer "doors_num"
-    t.string "fuel"
     t.bigint "concess_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
